@@ -1,6 +1,6 @@
- package com.banking.app.controller;
+package com.banking.app.controller;
 
-//Test
+
 
 
 import org.springframework.stereotype.Controller;
