@@ -30,6 +30,11 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="/Users/Purva/Desktop/softwares/ojdbc6.jar"/>
+=======
+	<classpathentry kind="lib" path="/Users/rahul7291/Documents/workspace_rahul/User_Login/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="/Users/rahul7291/Downloads/org.apache.commons.dbcp.jar"/>
+>>>>>>> branch 'master' of https://github.com/OnlineBanking1/Online-Banking-System.git
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
