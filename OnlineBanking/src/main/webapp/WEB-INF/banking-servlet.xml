@@ -2,12 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<!-- Searches for components in model, no need to declare been -->
+	<!--  <bean name="/welcome" 
+	class="com.banking.app.controller.CustomerController" /> 
+	 -->
 	<context:annotation-config/> 
-	<context:component-scan base-package="com.banking.app.controller" />
+	<context:component-scan base-package="com.banking.app.controller" /> 
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 	<property name="prefix" value="WEB-INF/views/"></property>
 	<property name="suffix" value=".jsp"></property>
@@ -29,8 +32,8 @@
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
 		<property name="dataSource" ref="dataSource"/>
-    	<!-- <property name="packagesToScan" value="com.banking.app.controller"/> -->
-    	
+    	<property name="packagesToScan" value="com.banking.app.model.Customer"/>
+      
     	<property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -40,10 +43,15 @@
             </props>
         </property>	
        	</bean>
-	<bean id="CustomerDao" class="com.banking.app.dao.CustomerDaoImpl">
+	<!--  <bean id="CustomerDao" class="com.banking.app.dao.CustomerDaoImpl">
 	<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>
+	</bean> 
 	<bean id="CustomerService" class="com.banking.app.service.CustomerServiceImpl">
-	</bean>
-	
+	<property name="customerDao" ref="CustomerDao"></property>
+	</bean> -->
+	<!-- <tx:annotation-driven />
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean> -->
 </beans>
