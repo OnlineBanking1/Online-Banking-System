@@ -22,8 +22,9 @@ public class CustomerDaoImpl  implements CustomerDao {
 
 	public void addCustomer(Customer customer)
 	{
+		
 		customer.setFirst_name("Ravi");
-		sessionFactory.openSession().save(customer);
+		sessionFactory.getCurrentSession().save(customer);
 	}
 	
 }

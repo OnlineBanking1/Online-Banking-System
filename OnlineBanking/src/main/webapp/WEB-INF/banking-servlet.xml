@@ -9,8 +9,9 @@
 	<!--  <bean name="/welcome" 
 	class="com.banking.app.controller.CustomerController" /> 
 	 -->
-	<context:annotation-config/> 
-	<context:component-scan base-package="com.banking.app.controller" /> 
+	<!-- <context:annotation-config/>  -->
+	<!-- <context:component-scan base-package="com.banking.app.">
+</context:component-scan> -->
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 	<property name="prefix" value="WEB-INF/views/"></property>
 	<property name="suffix" value=".jsp"></property>
@@ -32,7 +33,7 @@
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
 		<property name="dataSource" ref="dataSource"/>
-    	<property name="packagesToScan" value="com.banking.app.model.Customer"/>
+    	<property name="packagesToScan" value="com.banking.app.model"/>
       
     	<property name="hibernateProperties">
             <props>
