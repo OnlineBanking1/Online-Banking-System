@@ -1,11 +1,14 @@
 package com.banking.app.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import org.springframework.stereotype.Repository;
 
 import com.banking.app.model.Customer;
-
+@Repository
 public class CustomerDaoImpl  implements CustomerDao {
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -15,8 +18,8 @@ public class CustomerDaoImpl  implements CustomerDao {
 		return sessionFactory;
 	}
 	
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+public void setSessionFactory(SessionFactory sessionFactory) {
+	this.sessionFactory = sessionFactory;
 	}
 
 
@@ -24,7 +27,11 @@ public class CustomerDaoImpl  implements CustomerDao {
 	{
 		
 		customer.setFirst_name("Ravi");
-		sessionFactory.getCurrentSession().save(customer);
+		Session session=getSessionFactory().getCurrentSession();
+		  Transaction trans=session.beginTransaction();
+		   sessionFactory.getCurrentSession().save(customer);
+		  trans.commit();
+		
 	}
 	
 }
