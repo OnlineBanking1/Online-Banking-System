@@ -21,19 +21,19 @@
 	<property name="suffix" value=".jsp"></property>
 	</bean>
 	<!-- By using dbcp.BasicDataSource, you get a couple of extra properties: initalSize and maxActive --> 
-	<!-- <bean  id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.oracle.jdbc.Driver"/>
+	 <bean  id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@cogent-db.cmknt7rlv35j.us-east-1.rds.amazonaws.com:1521:bank" />
         <property name="username" value="cogentuser" />
         <property name="password" value="Boyce123" />
-	</bean> -->
+	</bean> 
 	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/banking" />
         <property name="username" value="root" />
         <property name="password" value="" />
-	</bean>
+	</bean> -->
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
 		<property name="dataSource" ref="dataSource"/>
@@ -41,7 +41,7 @@
       
     	<property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.current_session_context_class">thread</prop>

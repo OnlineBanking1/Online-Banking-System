@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="1_Customers")
+@Table(name="Customers_1")
 public class Customer {
 @Id
 @GeneratedValue
