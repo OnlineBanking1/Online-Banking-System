@@ -27,10 +27,10 @@ public void setSessionFactory(SessionFactory sessionFactory) {
 	{
 		
 		customer.setFirst_name("Ravi");
-		Session session=getSessionFactory().getCurrentSession();
-		  Transaction trans=session.beginTransaction();
-		   sessionFactory.getCurrentSession().save(customer);
-		  trans.commit();
+		Session session=sessionFactory.getCurrentSession();
+		  Transaction tx=session.beginTransaction();
+		   session.save(customer);
+		  tx.commit();
 		
 	}
 	
