@@ -88,7 +88,20 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-
+		
+		<!-- JSF
+		 -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.1.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.1.13</version>
+		</dependency>
+ 
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -114,7 +127,12 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+		<!-- EL -->
+		<dependency>
+			<groupId>com.sun.el</groupId>
+			<artifactId>el-ri</artifactId>
+			<version>1.0</version>
+		</dependency>
 	
 		<!-- Test -->
 		<dependency>
