@@ -26,6 +26,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/rahul7291/Desktop/Online-Banking-System/OnlineBanking/src/main/webapp/WEB-INF/lib/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="/Users/rahul7291/Desktop/Online-Banking-System/OnlineBanking/src/main/webapp/WEB-INF/lib/org.apache.commons.dbcp.jar"/>
+	<classpathentry kind="lib" path="/Users/rahul7291/Desktop/Online-Banking-System/OnlineBanking/bin/src/main/webapp/WEB-INF/lib/org.apache.commons.dbcp.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

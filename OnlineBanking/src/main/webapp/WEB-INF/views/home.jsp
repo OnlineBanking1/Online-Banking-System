@@ -9,6 +9,7 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> <a href="login.html">Click Here to Login</a> </P><br/>
+<P> <a href="register.html">Register</a> </P>
 </body>
 </html>
