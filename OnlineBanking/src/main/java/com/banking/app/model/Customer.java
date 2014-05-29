@@ -43,14 +43,18 @@ private String address2;
 private String city;
 
 @Column
-@NotEmpty
+@NotEmpty 
 private String state;
 
-@Column
+@Column(nullable=false, length=5)
 
 private int zipCode;
+
 @Column
+@NotEmpty
+@Size(min=10,max=10)
 private String Mobile;
+
 @Column
 private Date reg_date;
 
