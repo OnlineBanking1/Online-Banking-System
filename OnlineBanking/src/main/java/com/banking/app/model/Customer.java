@@ -46,13 +46,10 @@ private String city;
 @NotEmpty 
 private String state;
 
-@Column(nullable=false, length=5)
-
+@Column
 private int zipCode;
 
 @Column
-@NotEmpty
-@Size(min=10,max=10)
 private String Mobile;
 
 @Column
@@ -64,11 +61,9 @@ private Date reg_date;
 private String email;
 
 @Column
-@NotEmpty
 private String user_name;
 
 @Column
-@NotEmpty
 @Size(min=4,max=10)
 private String password;
 

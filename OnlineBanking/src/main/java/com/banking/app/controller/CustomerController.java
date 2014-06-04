@@ -22,7 +22,7 @@ import com.banking.app.service.CustomerService;
 import com.banking.app.service.CustomerServiceImpl;
 import com.banking.app.validation.UserValidation;
 
-@RequestMapping("/register")
+@RequestMapping("/")
 @Controller
 public class CustomerController {
 	
@@ -48,7 +48,7 @@ public class CustomerController {
 		this.customerService = customerService;
 	}
 	
-	@RequestMapping( method = RequestMethod.POST)
+	@RequestMapping(value="/register", method = RequestMethod.POST)
 	public String addCustomer(@Valid Customer customer, BindingResult result)
 	{
 		userValidation.validate(customer, result);
@@ -75,12 +75,20 @@ public class CustomerController {
 		}
 	
 	}
-	@RequestMapping(method= RequestMethod.GET)
+	@RequestMapping(value="/register", method= RequestMethod.GET)
 	public String showRegistration(ModelMap model)
 	{
 		Customer customer= new Customer();
 		model.addAttribute("customer", customer);
 		return "register";
+
+	}
+	@RequestMapping(value="/login", method= RequestMethod.GET)
+	public String showLogin(ModelMap model)
+	{
+		Customer customer= new Customer();
+		model.addAttribute("customer", customer);
+		return "login";
 
 	}
 }

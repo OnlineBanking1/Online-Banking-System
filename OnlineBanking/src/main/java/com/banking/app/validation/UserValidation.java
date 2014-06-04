@@ -15,6 +15,15 @@ public void validate(Object target, Errors errors)
 	{
 		errors.rejectValue("password", "matchingPassword.customer.password", "Confirmed password does not match!");
 	}
-	
+	if(String.valueOf(customer.getZipCode()).length()!=5)
+	{
+		errors.rejectValue("zipCode", "zipCode.required" ,"Zipcode needs to be a 5 digit number" );
+		
+	}
+	if(!(customer.getMobile().matches("[0-9]*") || customer.getMobile().length()==10))
+	{
+		errors.rejectValue("mobile", "notMatch.mobile","Invalid mobile number");
+	}
+
 }
 }

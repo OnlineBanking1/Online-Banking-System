@@ -9,7 +9,7 @@
 	Hello world!  
 </h1>
 
-<P> <a href="login.html">Click Here to Login</a> </P><br/>
-<P> <a href="register.html">Register</a> </P>
+<P> <a href="/OnlineBanking/login">Click Here to Login</a> </P><br/>
+<P> <a href="/OnlineBanking/register">Register</a> </P>
 </body>
 </html>

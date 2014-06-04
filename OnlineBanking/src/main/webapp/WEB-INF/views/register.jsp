@@ -10,20 +10,10 @@
 <title>Register</title>
 </head>
 <body>
+<h1>Registration Details</h1>
 <form:form method="Post" action="register" modelAttribute="customer">
 <table>
-<tr>
-<td>User Name:</td>
-<td><form:input path="user_name" /></td>
-<td><font color="red"><form:errors path="user_name" /></font></td></tr>
-<tr>
-<td>Password:</td>
-<td><form:password path="password" /></td>
-<td><font color="red"><form:errors path="password" /></font></td></tr>
-<tr>
-<td>Confirm Password:</td>
-<td><form:password path="confirm_password" /></td>
-<td><font color="red"><form:errors path="confirm_password" /></font></td></tr>
+
 <tr>
 <td>First Name:</td>
 <td><form:input path="first_name" /></td>
@@ -61,10 +51,23 @@
 <td>Mobile:</td>
 <td><form:input path="mobile" /></td>
 <td><font color="red"><form:errors path="mobile" /></font></td></tr>
+
+ 
+
+<tr>
+<td>User Name:</td>
+<td><form:input path="user_name" /></td>
+<td><font color="red"><form:errors path="user_name" /></font></td></tr>
+<tr>
+<td>Password:</td>
+<td><form:password path="password" /></td>
+<td><font color="red"><form:errors path="password" /></font></td></tr>
+<tr>
+<td>Confirm Password:</td>
+<td><form:password path="confirm_password" /></td>
+<td><font color="red"><form:errors path="confirm_password" /></font></td></tr>
 </table>
-<input type="submit" value="Submit" /> 
-
-
+<input type="submit" value="Submit" />
 </form:form>
 </body>
 </html>
