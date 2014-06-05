@@ -12,6 +12,9 @@
 <body>
 <h1>Login Details</h1>
 <form:form method="Post" action="login" modelAttribute="customer">
+<c:if test="${loginError != null}">
+${loginError}
+</c:if>
 <table>
 <tr>
 <td>User Name:</td>

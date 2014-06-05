@@ -24,5 +24,10 @@ public void addCustomer(Customer customer)
 {
 	customerDao.addCustomer(customer);
 }
+public boolean doLogin(Customer customer)
+{
+	boolean userStatus=customerDao.doLogin(customer);
+	return userStatus;
+}
 
 }

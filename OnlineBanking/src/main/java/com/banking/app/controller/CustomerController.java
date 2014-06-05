@@ -8,11 +8,13 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -89,6 +91,22 @@ public class CustomerController {
 		Customer customer= new Customer();
 		model.addAttribute("customer", customer);
 		return "login";
-
+	}
+	@RequestMapping(value="/login", method= RequestMethod.POST)
+	public String doLogin(@ModelAttribute Customer customer,ModelMap model)
+	{
+		boolean userStatus=customerService.doLogin(customer);
+		if(userStatus==true)
+		{
+			model.addAttribute("customer", customer);
+			return "home";
+		}
+		else{
+			System.out.println("ABC");
+			model.addAttribute("loginError","UserName or Password incorrect. Please login again");
+			return "login";
+			
+		}
+			
 	}
 }
